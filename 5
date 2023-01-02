@@ -1,0 +1,52 @@
+using System.Diagnostics.CodeAnalysis;
+string destination = Console.ReadLine();
+string room = Console.ReadLine();
+int nights = int.Parse(Console.ReadLine());
+double price = 0;
+double sum = 0;
+switch (destination)
+{
+    case "Paris":
+        switch (room)
+        {
+            case "standard room":
+                price = 27.5; break;
+            case "room with balcony":
+                price = 30.2; break;
+            case "apartment":
+                price = 40.5; break;
+        }
+        break;
+    case "London":
+        switch (room)
+        {
+            case "standard room":
+                price = 22.99; break;
+            case "room with balcony":
+                price = 25; break;
+            case "apartment":
+                price = 34.99; break;
+        }
+        break;
+    case "Prague":
+        switch (room)
+        {
+            case "standard room":
+                price = 23; break;
+            case "room with balcony":
+                price = 26.6; break;
+            case "apartment":
+                price = 39.8; break;
+        }
+        break;
+}
+if(nights > 7)
+{
+    sum = nights * price * 0.75 * 4; 
+    
+}
+else
+{
+    sum = nights * price * 4;
+}
+Console.WriteLine($"Family's holiday in {destination} costs {sum:F2} lv.");
