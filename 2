@@ -1,0 +1,25 @@
+double wage2 = double.Parse(Console.ReadLine());
+int days = int.Parse(Console.ReadLine());
+int wage1 = 60;
+double income = 0;
+if(days > 2 && days < 8)
+{
+    List<string> list = Console.ReadLine().Split(", ").ToList();
+    foreach(string s in list)
+    {
+        if (s == "Friday" || s == "Saturday")
+        {
+            income += wage1 * 1.15;
+        }
+        else
+        {
+            income += wage1;
+        }
+    }
+    income += wage2 * 3;
+    Console.WriteLine($"{income:F2}");
+}
+else
+{
+    Console.WriteLine($"{days} is invalid number.");
+}
