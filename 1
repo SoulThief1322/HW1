@@ -1,0 +1,11 @@
+int days = int.Parse(Console.ReadLine());
+int sum = 0;
+if(days > 2 && days < 8)
+{
+    sum = days * 8 + 15;
+    Console.WriteLine(sum);
+}
+else
+{
+    Console.WriteLine($"{days} is invalid number.");
+}
