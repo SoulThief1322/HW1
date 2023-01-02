@@ -1,0 +1,42 @@
+string day = Console.ReadLine();
+int hour = int.Parse(Console.ReadLine());
+int daysCount = 0;
+bool available = true;
+List<string> list = new List<string> {"Tuesday", "Wednesday", "Thursday"};
+if(hour >= 10 && hour <= 22)
+{
+    daysCount = int.Parse(Console.ReadLine());
+    List<string> days = new List<string>(daysCount);
+    if (daysCount > 2 && daysCount < 8)
+    {
+        for (int i = 0; i < daysCount; i++)
+        {
+            days.Insert(i, Console.ReadLine());
+        }
+        if (days.Contains(day) && hour >= 16)
+        {
+            available = false;
+        }
+        else if (list.Contains(day) && hour >= 10 && hour <= 15)
+        {
+            available = false;
+        }
+        if (!available)
+        {
+            Console.WriteLine($"Ivan isn’t free on {day} at {hour}.");
+        }
+        else
+        {
+            Console.WriteLine($"Ivan is free on {day} at {hour}.");
+        }
+    }
+    else
+    {
+        Console.WriteLine($"{daysCount} is invalid number.");
+    }
+    
+}
+else
+{
+    Console.WriteLine($"{hour} is invalid number.");
+}
